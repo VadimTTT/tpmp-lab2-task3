@@ -1,7 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-// Структура Student (вариант 22)
+// Student structure (variant 22)
 typedef struct {
     char name[50];
     int age;
@@ -10,7 +10,7 @@ typedef struct {
     char group[10];
 } Student;
 
-// Прототипы функций (интерфейс)
+// Function prototypes (interface)
 void initStudent(Student* student, const char* name, int age, float grade, int course, const char* group);
 void printStudent(const Student* student);
 float calculateAverageGrade(const Student* student, const int* grades, int count);
