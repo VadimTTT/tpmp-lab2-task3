@@ -2,9 +2,8 @@
 
 ## Project Information
 - **Student:** Vadim Tyushko
-- **Group:** PI-23-1
+- **Group:** 12
 - **Repository:** tpmp-lab2-task3
-- **Date:** March 9, 2026
 - **Variant:** 22 (TRAIN + SOFTWARE structures)
 
 ---
