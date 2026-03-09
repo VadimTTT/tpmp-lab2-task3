@@ -4,16 +4,20 @@ TARGET = program
 SRCDIR = src
 OBJDIR = obj
 
-SOURCES = $(wildcard $(SRCDIR)/client/*.c) $(wildcard $(SRCDIR)/server/*.c)
+SOURCES = $(wildcard $(SRCDIR)/client/*.c) \
+          $(wildcard $(SRCDIR)/server/*.c)
 OBJECTS = $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(TARGET)
+	@echo "✅ Build complete"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "🔨 Compiled: $<"
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)/client $(OBJDIR)/server
@@ -23,5 +27,6 @@ run: $(TARGET)
 
 clean:
 	rm -rf $(OBJDIR) $(TARGET)
+	@echo "🧹 Clean complete"
 
 .PHONY: all run clean
